@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ImageSensor">
+      <UniqueIdentifier>{be38a2b4-8e40-487c-9f1a-6b8d911d1c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DepthSensor">
+      <UniqueIdentifier>{f79ead00-5bc6-4d38-8f7c-72e8d13fa7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SkeletonSensor">
+      <UniqueIdentifier>{4edda6fd-669d-404b-a873-7d2d75f53fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sensor">
+      <UniqueIdentifier>{b6ed8d0f-9e49-4d66-9c14-fff5c89bec30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImageSensor">
+      <UniqueIdentifier>{9c0b3495-ff76-41c7-97f9-b123246a4225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DepthSensor">
+      <UniqueIdentifier>{7d09e461-ea1c-48ce-98b3-66f779cfdc6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sensor">
+      <UniqueIdentifier>{3286ba34-1847-4795-baff-1da075be99fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SkeletonSensor">
+      <UniqueIdentifier>{9f382483-a5c1-4178-b126-c56546d56bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\WindowsWindow">
+      <UniqueIdentifier>{d01a738d-c3e5-4ae7-89c5-956edb8c9cf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WindowsWindow">
+      <UniqueIdentifier>{7b9477eb-6c4c-4b6d-b113-24b13e4ceced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Streams">
+      <UniqueIdentifier>{4a6ef63b-f980-4436-9045-760080ab9145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AudioSensor">
+      <UniqueIdentifier>{13c9c411-1a4c-44ec-a5fd-d87ff1d16a0b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenGL.props" />
+    <None Include="KinectSDK.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSensor.cpp">
+      <Filter>Source Files\ImageSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthSensor.cpp">
+      <Filter>Source Files\DepthSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsWindow.cpp">
+      <Filter>Source Files\WindowsWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonSensor.cpp">
+      <Filter>Source Files\SkeletonSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Sensor.cpp">
+      <Filter>Source Files\Sensor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImageSensor.h">
+      <Filter>Header Files\ImageSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthSensor.h">
+      <Filter>Header Files\DepthSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsWindow.h">
+      <Filter>Header Files\WindowsWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensor.h">
+      <Filter>Header Files\Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonSensor.h">
+      <Filter>Header Files\SkeletonSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioStream.h">
+      <Filter>Header Files\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorStream.h">
+      <Filter>Header Files\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthStream.h">
+      <Filter>Header Files\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="InfraredStream.h">
+      <Filter>Header Files\Streams</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSensor.h">
+      <Filter>Header Files\AudioSensor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
