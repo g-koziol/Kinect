@@ -73,6 +73,9 @@
     <ClCompile Include="Sensor.cpp">
       <Filter>Source Files\Sensor</Filter>
     </ClCompile>
+    <ClCompile Include="userInterface.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageSensor.h">
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="AudioSensor.h">
       <Filter>Header Files\AudioSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="userInterface.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
