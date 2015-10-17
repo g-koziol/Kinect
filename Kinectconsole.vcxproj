@@ -23,7 +23,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_CTP_Nov2012</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release2|Win32'" Label="Configuration">
@@ -54,7 +54,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>D:\Dokumenty Koziol\GRZEGORZ\Documents\Visual Studio 2013\Projects\Kinect_lib\SDL2-2.0.3-win32-x64\lib\x86;$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <LibraryPath>D:\Dokumenty Koziol\GRZEGORZ\Documents\Visual Studio 2013\Projects\Kinect_lib\SDL2-2.0.3-win32-x64\lib\x86;$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\lib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release2|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -76,7 +76,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2main.lib;SDL2.lib;glu32.lib;opengl32.lib;kinect10.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -129,22 +129,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="SkeletonSensor.cpp" />
-    <ClCompile Include="userInterface.cpp">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MinimalRebuild>
-      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</BasicRuntimeChecks>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
-      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Async</ExceptionHandling>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MinimalRebuild>
-      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Default</BasicRuntimeChecks>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
-      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Async</ExceptionHandling>
-    </ClCompile>
     <ClCompile Include="WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,11 +139,11 @@
     <ClInclude Include="DepthStream.h" />
     <ClInclude Include="ImageSensor.h" />
     <ClInclude Include="InfraredStream.h" />
+    <ClInclude Include="KinectRecognitionApp.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Sensor.h" />
     <ClInclude Include="SkeletonSensor.h" />
-    <ClInclude Include="userInterface.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +154,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="userInterface.resx">
-      <DependentUpon>userInterface.h</DependentUpon>
-    </EmbeddedResource>
+    <ResourceCompile Include="KinectRecognitionApp.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

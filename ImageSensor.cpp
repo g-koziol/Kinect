@@ -1,4 +1,1 @@
 #include "ImageSensor.h"
-
-
-
