@@ -49,6 +49,9 @@
     <Filter Include="Header Files\AudioSensor">
       <UniqueIdentifier>{13c9c411-1a4c-44ec-a5fd-d87ff1d16a0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ErrorHandling">
+      <UniqueIdentifier>{be0369cb-cc1f-4ee1-b470-87fe6913d70c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenGL.props" />
@@ -72,6 +75,9 @@
     </ClCompile>
     <ClCompile Include="Sensor.cpp">
       <Filter>Source Files\Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorHandler.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorHandler.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

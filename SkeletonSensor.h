@@ -2,6 +2,7 @@
 #define __SKELETON_SENSOR__
 #include <Windows.h>
 #include "NuiApi.h"
+#include "ErrorHandler.h"
 
 class SkeletonSensor{
 

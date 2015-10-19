@@ -8,6 +8,7 @@
 #include <windows.h>
 #include "NuiApi.h"
 #include "resource.h"
+#include "ErrorHandler.h"
 
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
@@ -16,7 +17,7 @@ static const float g_InferredBoneThickness = 1.0f;
 class Sensor{
 	HWND mainHwnd;
 	bool isSeatedMode;
-	INuiSensor * actualSensor;
+	INuiSensor * mainSensor;
 	DepthSensor depthSensor;
 	ImageSensor imageSensor;
 	SkeletonSensor skeletonSensor;
@@ -42,6 +43,11 @@ public:
 
 	}
 
+	~Sensor()
+	{
+		NuiShutdown();
+	}
+
 
 	HRESULT init()
 	{
@@ -63,25 +69,25 @@ public:
 			hr = temporarySensor->NuiStatus();
 			if (hr == S_OK)
 			{
-				this->actualSensor = temporarySensor;
+				this->mainSensor = temporarySensor;
 				break;
 			}
 			temporarySensor->Release();
 		}
 
-		if (this->actualSensor != NULL)
+		if (this->mainSensor != NULL)
 		{
-			hr = this->actualSensor->NuiInitialize(NUI_INITIALIZE_FLAG_USES_AUDIO | NUI_INITIALIZE_FLAG_USES_DEPTH_AND_PLAYER_INDEX | NUI_INITIALIZE_FLAG_USES_COLOR | NUI_INITIALIZE_FLAG_USES_SKELETON | NUI_INITIALIZE_FLAG_USES_DEPTH);
+			hr = this->mainSensor->NuiInitialize(NUI_INITIALIZE_FLAG_USES_AUDIO | NUI_INITIALIZE_FLAG_USES_DEPTH_AND_PLAYER_INDEX | NUI_INITIALIZE_FLAG_USES_COLOR | NUI_INITIALIZE_FLAG_USES_SKELETON | NUI_INITIALIZE_FLAG_USES_DEPTH);
 			if (SUCCEEDED(hr))
 			{
 				this->skeletonSensor.setSkeletonNextEvent(CreateEventW(NULL, TRUE, FALSE, NULL));
 				this->imageSensor.setImageNextEvent(CreateEventW(NULL, TRUE, FALSE, NULL));
 				this->depthSensor.setDepthNextEvent(CreateEventW(NULL, TRUE, FALSE, NULL));
 				this->audioSensor.setAudioNextEvent(CreateEventW(NULL, TRUE, FALSE, NULL));
-				hr = this->actualSensor->NuiSkeletonTrackingEnable(this->skeletonSensor.getHandleSkeletonEvent(), 0);
+				hr = this->mainSensor->NuiSkeletonTrackingEnable(this->skeletonSensor.getHandleSkeletonEvent(), 0);
 			}
 		}
-		if (this->actualSensor == NULL)
+		if (this->mainSensor == NULL)
 		{
 			setStatusMessage(L"Nie znaleziono urzadzenia Kinect!");
 			return E_FAIL;
@@ -91,7 +97,7 @@ public:
 			setStatusMessage(L"Problem z inicjalizowaniem modulu Kinect!");
 			return E_FAIL;
 		}
-
+		mainSensor->NuiSkeletonTrackingEnable
 		return hr;
 	}
 

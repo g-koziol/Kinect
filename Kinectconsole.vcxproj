@@ -54,7 +54,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>D:\Dokumenty Koziol\GRZEGORZ\Documents\Visual Studio 2013\Projects\Kinect_lib\SDL2-2.0.3-win32-x64\lib\x86;$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\lib</LibraryPath>
+    <LibraryPath>C:\boost;D:\Dokumenty Koziol\GRZEGORZ\Documents\Visual Studio 2013\Projects\Kinect_lib\SDL2-2.0.3-win32-x64\lib\x86;$(KINECTSDK10_DIR)\lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\lib</LibraryPath>
+    <IncludePath>C:\boost;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release2|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -125,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DepthSensor.cpp" />
+    <ClCompile Include="ErrorHandler.cpp" />
     <ClCompile Include="ImageSensor.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sensor.cpp" />
@@ -137,6 +139,7 @@
     <ClInclude Include="ColorStream.h" />
     <ClInclude Include="DepthSensor.h" />
     <ClInclude Include="DepthStream.h" />
+    <ClInclude Include="ErrorHandler.h" />
     <ClInclude Include="ImageSensor.h" />
     <ClInclude Include="InfraredStream.h" />
     <ClInclude Include="KinectRecognitionApp.h" />

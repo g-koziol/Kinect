@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include "Sensor.h"
+#include "ErrorHandler.h"
 
 static const int cScreenWidth = 320;
 static const int cScreenHeight = 240;

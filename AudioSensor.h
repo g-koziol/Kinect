@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include "NuiApi.h"
+#include "ErrorHandler.h"
 
 class AudioSensor
 {
